@@ -12,10 +12,16 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Driver implements Serializable {
+public class Driver {
         @Id
         @Column(name = "user_details_id", unique = true, nullable = false)
         private Long id;
+
+
+        @Column(nullable = false) @Size(max = 30)
+        private String licenseId;
+
+
 
         @OneToOne
         @MapsId
@@ -24,7 +30,5 @@ public class Driver implements Serializable {
         @ToString.Exclude
         private UserDetails userDetails;
 
-        @Column(nullable = false) @Size(max = 30)
-        private String licenseId;
 }
 

@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Owner implements Serializable {
+public class Owner {
     @Id
     @Column(name = "user_details_id", unique = true, nullable = false)
     private Long id;

@@ -4,17 +4,20 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
+
 
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Admin implements Serializable {
+public class Admin {
     @Id
     @Column(name = "user_details_id", unique = true, nullable = false)
     private Long id;
+
+    @ManyToOne
+    private UserStatus userStatus;
 
     @OneToOne
     @MapsId

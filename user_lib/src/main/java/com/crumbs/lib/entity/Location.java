@@ -22,6 +22,7 @@ public class Location {
     private String city;
     private Integer zipCode;
     private String state;
+
     @Column(unique = true)
     private String street;
 

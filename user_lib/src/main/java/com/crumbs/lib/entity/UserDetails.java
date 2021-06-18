@@ -10,13 +10,15 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDetails implements Serializable {
+public class UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -53,4 +55,7 @@ public class UserDetails implements Serializable {
 
     @Column(unique = true, nullable = false)
     private String email;
+
+    @OneToMany
+    private List<Search> searches = new ArrayList<>();
 }

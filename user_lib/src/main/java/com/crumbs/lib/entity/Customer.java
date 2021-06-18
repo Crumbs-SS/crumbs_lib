@@ -11,10 +11,14 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer implements Serializable {
+public class Customer {
     @Id
     @Column(name = "user_details_id", unique = true, nullable = false)
     private Long id;
+
+
+    @Column(nullable = false)
+    private String phone;
 
     @OneToOne
     @MapsId
@@ -22,8 +26,5 @@ public class Customer implements Serializable {
     @JsonBackReference
     @ToString.Exclude
     private UserDetails userDetails;
-
-    @Column(nullable = false)
-    private String phone;
 }
 

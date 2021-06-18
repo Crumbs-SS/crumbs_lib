@@ -14,10 +14,11 @@ import javax.persistence.*;
 @Builder
 @Entity
 public class CartItem {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String preferences;
 
     @ManyToOne
     private MenuItem menuItem;
@@ -25,6 +26,4 @@ public class CartItem {
     @ManyToOne
     @JsonIgnoreProperties({"cartItems", "orders"})
     private Customer customer;
-
-    private String preferences;
 }
