@@ -23,5 +23,5 @@ public class Category {
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("categories")
-    private List<com.crumbs.fss.entity.RestaurantCategory> restaurants;
+    private List<RestaurantCategory> restaurants;
 }

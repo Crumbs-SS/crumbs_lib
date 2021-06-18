@@ -23,14 +23,14 @@ public class Restaurant {
     private Long id;
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
-    private List<com.crumbs.fss.entity.MenuItem> menuItems = new ArrayList<>();
+    private List<MenuItem> menuItems = new ArrayList<>();
 
     @JsonIgnoreProperties("restaurant")
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
-    private List<com.crumbs.fss.entity.RestaurantCategory> categories = new ArrayList<>();
+    private List<RestaurantCategory> categories = new ArrayList<>();
 
     @ManyToOne
-    private com.crumbs.fss.entity.Location location;
+    private Location location;
     private String name;
     private Integer rating;
     private Integer priceRating;
@@ -38,6 +38,6 @@ public class Restaurant {
 
     @ManyToOne
     @JsonIgnoreProperties("restaurants")
-    private RestaurantOwner restaurantOwner;
+    private Owner restaurantOwner;
 }
 
