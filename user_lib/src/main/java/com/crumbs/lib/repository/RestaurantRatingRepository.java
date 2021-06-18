@@ -1,4 +1,9 @@
 package com.crumbs.lib.repository;
 
-public interface RestaurantRatingRepository {
+import com.crumbs.lib.entity.RestaurantRating;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RestaurantRatingRepository extends JpaRepository<RestaurantRating, Long> {
 }
