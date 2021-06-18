@@ -1,7 +1,7 @@
 package com.crumbs.lib.repository;
 
-import com.crumbs.fss.entity.RestaurantCategory;
-import com.crumbs.fss.entity.RestaurantCategoryID;
+import com.crumbs.lib.entity.RestaurantCategory;
+import com.crumbs.lib.entity.RestaurantCategoryID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

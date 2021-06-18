@@ -1,7 +1,6 @@
 package com.crumbs.lib.repository;
 
-
-import com.crumbs.fss.entity.Restaurant;
+import com.crumbs.lib.entity.Restaurant;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

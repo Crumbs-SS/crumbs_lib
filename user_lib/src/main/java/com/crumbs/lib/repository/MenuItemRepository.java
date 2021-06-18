@@ -1,6 +1,6 @@
 package com.crumbs.lib.repository;
 
-import com.crumbs.fss.entity.MenuItem;
+import com.crumbs.lib.entity.MenuItem;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
