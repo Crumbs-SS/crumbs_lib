@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,25 +22,44 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JsonIgnoreProperties("menuItems")
-    private Restaurant restaurant;
 
-    @ManyToOne
-    private Location location;
-
-    private Boolean fulfilled;
     private String preferences;
     private String phone;
 
     private String address;
 
+    private Date deliveryTime;
+    private Date createdAt;
+
+    @ManyToOne
+    private Location location;
+
     @OneToOne(mappedBy = "order")
     private DriverRating driverRating;
+
+    @OneToOne(mappedBy="order")
+    private RestaurantRating restaurantRating;
+
+    @ManyToOne
+    private RestaurantStatus restaurantStatus;
+
+    @ManyToOne
+    @JsonIgnoreProperties("orders")
+    private Driver driver;
 
     @ManyToOne
     @JsonIgnoreProperties("orders")
     private Customer customer;
+
+    @ManyToOne
+    private Payment payment;
+
+    @ManyToOne
+    private Location deliveryLocation;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"menuItems", "orders"})
+    private Restaurant restaurant;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("order")

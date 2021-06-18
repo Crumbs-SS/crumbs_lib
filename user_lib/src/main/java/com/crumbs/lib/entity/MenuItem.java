@@ -19,11 +19,11 @@ public class MenuItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    @ManyToOne
-    @JsonIgnoreProperties("menuItems")
-    private Restaurant restaurant;
-
     private String name;
     private Float price;
     private String description;
+
+    @ManyToOne
+    @JsonIgnoreProperties("menuItems")
+    private Restaurant restaurant;
 }

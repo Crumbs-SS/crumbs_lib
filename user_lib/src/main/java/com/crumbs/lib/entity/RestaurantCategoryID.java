@@ -13,7 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Embeddable
-public class RestaurantCategoryID {
+public class RestaurantCategoryID implements Serializable{
     private long restaurantId;
     private String categoryId;
 }

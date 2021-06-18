@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,8 +21,14 @@ public class Driver {
         @Column(nullable = false) @Size(max = 30)
         private String licenseId;
 
+        @Column(nullable = false)
+        private String state;
+
         @ManyToOne
         private UserStatus userStatus;
+
+        @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
+        private List<Order> orders;
 
         @OneToOne
         @MapsId

@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,11 +19,23 @@ public class Customer {
     private Long id;
 
 
-    @Column(nullable = false)
+    @Column(nullable = false) @Size(max = 20)
     private String phone;
+
+    @Column(nullable = false)
+    private Long loyaltyPoints;
+
+    @Column(nullable = false)
+    private String stripeId;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Location> locations;
 
     @ManyToOne
     private UserStatus userStatus;
+
+    @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
+    private List<Order> orders;
 
     @OneToOne
     @MapsId

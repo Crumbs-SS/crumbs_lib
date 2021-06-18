@@ -22,6 +22,20 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    private Location location;
+
+    private String name;
+    private Integer rating;
+    private Integer priceRating;
+
+    @ManyToOne
+    @JsonIgnoreProperties("restaurants")
+    private Owner restaurantOwner;
+
+    @OneToMany(mappedBy="restaurant", cascade = CascadeType.ALL)
+    private List<Order> orders;
+
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private List<MenuItem> menuItems = new ArrayList<>();
 
@@ -29,16 +43,7 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private List<RestaurantCategory> categories = new ArrayList<>();
 
-    @OneToOne
-    private Location location;
-    private String name;
-    private Integer rating;
-    private Integer priceRating;
     @ManyToOne
-    private String status;
-
-    @ManyToOne
-    @JsonIgnoreProperties("restaurants")
-    private Owner restaurantOwner;
+    private RestaurantStatus restaurantStatus;
 }
 
