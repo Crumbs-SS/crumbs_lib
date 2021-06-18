@@ -29,11 +29,12 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private List<RestaurantCategory> categories = new ArrayList<>();
 
-    @ManyToOne
+    @OneToOne
     private Location location;
     private String name;
     private Integer rating;
     private Integer priceRating;
+    @ManyToOne
     private String status;
 
     @ManyToOne

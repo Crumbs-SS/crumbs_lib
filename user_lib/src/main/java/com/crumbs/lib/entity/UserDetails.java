@@ -56,6 +56,9 @@ public class UserDetails {
     @Column(unique = true, nullable = false)
     private String email;
 
+    @Column(nullable = false)
+    private String phone;
+
     @OneToMany
     private List<Search> searches = new ArrayList<>();
 }
