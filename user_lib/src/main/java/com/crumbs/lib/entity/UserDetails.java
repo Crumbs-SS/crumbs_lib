@@ -19,7 +19,7 @@ import java.io.Serializable;
 public class UserDetails implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
     @JsonManagedReference

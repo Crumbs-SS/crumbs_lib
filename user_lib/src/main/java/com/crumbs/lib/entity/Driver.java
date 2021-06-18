@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class Driver implements Serializable {
         @Id
         @Column(name = "user_details_id", unique = true, nullable = false)
-        private Integer id;
+        private Long id;
 
         @OneToOne
         @MapsId
