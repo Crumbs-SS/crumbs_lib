@@ -3,3 +3,5 @@
 /.idea/jarRepositories.xml
 /.idea/compiler.xml
 /.idea/.gitignore
+/out
+/crumbs_lib.iml
