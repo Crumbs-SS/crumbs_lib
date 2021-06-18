@@ -20,6 +20,9 @@ public class Customer {
     @Column(nullable = false)
     private String phone;
 
+    @ManyToOne
+    private UserStatus userStatus;
+
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")

@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 
 @Entity
 @Data
@@ -21,7 +20,8 @@ public class Driver {
         @Column(nullable = false) @Size(max = 30)
         private String licenseId;
 
-
+        @ManyToOne
+        private UserStatus userStatus;
 
         @OneToOne
         @MapsId

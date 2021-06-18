@@ -34,6 +34,9 @@ public class Order {
 
     private String address;
 
+    @OneToOne(mappedBy = "order")
+    private DriverRating driverRating;
+
     @ManyToOne
     @JsonIgnoreProperties("orders")
     private Customer customer;
