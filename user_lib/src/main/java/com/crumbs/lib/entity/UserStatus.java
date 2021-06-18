@@ -23,22 +23,18 @@ public class UserStatus {
     private String status;
 
     @OneToMany(mappedBy = "userStatus")
-    @JsonIgnoreProperties("userStatus")
     @JsonIgnore
     private List<Admin> admins;
 
     @OneToMany(mappedBy = "userStatus")
-    @JsonIgnoreProperties("userStatus")
     @JsonIgnore
     private List<Customer> customers;
 
     @OneToMany(mappedBy = "userStatus")
-    @JsonIgnoreProperties("userStatus")
     @JsonIgnore
     private List<Owner> owners;
 
     @OneToMany(mappedBy = "userStatus")
-    @JsonIgnoreProperties("userStatus")
     @JsonIgnore
     private List<Driver> drivers;
 }
