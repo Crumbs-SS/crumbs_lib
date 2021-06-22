@@ -1,6 +1,7 @@
 package com.crumbs.lib.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class Admin {
 
     @ManyToOne
     @JoinColumn(name = "user_status_id")
+    @JsonIgnoreProperties("admins")
     private UserStatus userStatus;
 
     @OneToOne

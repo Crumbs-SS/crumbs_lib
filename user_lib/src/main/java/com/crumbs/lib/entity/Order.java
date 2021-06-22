@@ -15,7 +15,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "order")
+@Entity(name = "restaurant_order")
 public class Order {
 
     @Id

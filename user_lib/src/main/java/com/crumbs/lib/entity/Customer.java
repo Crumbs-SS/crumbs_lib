@@ -1,6 +1,7 @@
 package com.crumbs.lib.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -29,6 +30,7 @@ public class Customer {
 
     @ManyToOne
     @JoinColumn(name="user_status_id")
+    @JsonIgnoreProperties("customers")
     private UserStatus userStatus;
 
     @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)

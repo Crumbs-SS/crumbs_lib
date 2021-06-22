@@ -20,6 +20,7 @@ public class Owner {
 
     @ManyToOne
     @JoinColumn(name="user_status_id")
+    @JsonIgnoreProperties("owners")
     private UserStatus userStatus;
 
     @OneToOne
@@ -30,7 +31,6 @@ public class Owner {
     private UserDetails userDetails;
 
     @OneToMany(mappedBy="restaurantOwner", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("owner")
     private List<Restaurant> restaurants;
 }
 
