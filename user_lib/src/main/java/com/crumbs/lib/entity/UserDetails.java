@@ -59,6 +59,6 @@ public class UserDetails {
     @Column(nullable = false)
     private String phone;
 
-    @OneToMany
+    @OneToMany(mappedBy = "userDetails", cascade = CascadeType.ALL)
     private List<Search> searches = new ArrayList<>();
 }

@@ -21,7 +21,7 @@ public class RestaurantRating {
     @ManyToOne
     private Restaurant restaurant;
 
-    @OneToOne(mappedBy = "restaurantRating")
+    @OneToOne
     @JsonIgnoreProperties("restaurantRating")
     private Order order;
 

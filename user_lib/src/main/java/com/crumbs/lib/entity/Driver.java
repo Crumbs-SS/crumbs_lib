@@ -21,10 +21,12 @@ public class Driver {
         @Column(nullable = false) @Size(max = 30)
         private String licenseId;
 
-        @Column(nullable = false)
-        private String state;
+        @JoinColumn(name="state_id")
+        @ManyToOne
+        private DriverState state;
 
         @ManyToOne
+        @JoinColumn(name="status_id")
         private UserStatus userStatus;
 
         @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)

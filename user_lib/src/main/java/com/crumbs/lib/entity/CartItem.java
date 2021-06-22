@@ -27,5 +27,6 @@ public class CartItem {
 
     @ManyToOne
     @JsonIgnoreProperties({"cartItems", "orders"})
+    @JoinColumn(name="customer_id")
     private Customer customer;
 }

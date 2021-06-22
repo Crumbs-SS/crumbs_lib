@@ -6,10 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -24,6 +21,7 @@ public class RestaurantCategory {
     @MapsId("categoryId")
     @ManyToOne
     @JsonIgnore
+    @JoinColumn(name="category_id")
     private Category category;
 
     @MapsId("restaurantId")

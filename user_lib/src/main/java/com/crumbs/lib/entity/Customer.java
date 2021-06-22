@@ -18,20 +18,17 @@ public class Customer {
     @Column(name = "user_details_id", unique = true, nullable = false)
     private Long id;
 
-
-    @Column(nullable = false) @Size(max = 20)
-    private String phone;
-
     @Column(nullable = false)
     private Long loyaltyPoints;
 
     @Column(nullable = false)
     private String stripeId;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<Location> locations;
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
+    private List<CustomerLocation> locations;
 
     @ManyToOne
+    @JoinColumn(name="user_status_id")
     private UserStatus userStatus;
 
     @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)

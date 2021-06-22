@@ -6,15 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
 public class CustomerLocation {
 
     @EmbeddedId
@@ -23,6 +21,7 @@ public class CustomerLocation {
     @MapsId("customerID")
     @ManyToOne
     @JsonIgnore
+    @JoinColumn(name="customer_id")
     private Customer customer;
 
     @MapsId("locationID")

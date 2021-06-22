@@ -19,7 +19,8 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer StripeID;
+    @Column(name="stripe_id")
+    private String stripeID;
     private boolean isValid;
 
     @OneToMany(mappedBy = "payment")

@@ -1,10 +1,12 @@
 package com.crumbs.lib.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,10 +18,8 @@ public class Owner {
     @Column(name = "user_details_id", unique = true, nullable = false)
     private Long id;
 
-    @Column(nullable = false)
-    private String phone;
-
     @ManyToOne
+    @JoinColumn(name="user_status_id")
     private UserStatus userStatus;
 
     @OneToOne
@@ -28,6 +28,10 @@ public class Owner {
     @JsonBackReference
     @ToString.Exclude
     private UserDetails userDetails;
+
+    @OneToMany(mappedBy="restaurantOwner", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("owner")
+    private List<Restaurant> restaurants;
 }
 
 

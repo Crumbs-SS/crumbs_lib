@@ -15,24 +15,17 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "restaurant_order")
+@Entity(name = "order")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    private String preferences;
     private String phone;
-
-    private String address;
-
+    private String preferences;
     private Date deliveryTime;
     private Date createdAt;
-
-    @ManyToOne
-    private Location location;
 
     @OneToOne(mappedBy = "order")
     private DriverRating driverRating;
@@ -41,20 +34,24 @@ public class Order {
     private RestaurantRating restaurantRating;
 
     @ManyToOne
-    private RestaurantStatus restaurantStatus;
+    @JoinColumn(name="status_id")
+    private OrderStatus orderStatus;
 
     @ManyToOne
     @JsonIgnoreProperties("orders")
+    @JoinColumn(name="driver_id")
     private Driver driver;
 
     @ManyToOne
     @JsonIgnoreProperties("orders")
+    @JoinColumn(name="customer_id")
     private Customer customer;
 
     @ManyToOne
     private Payment payment;
 
     @ManyToOne
+    @JoinColumn(name="delivery_location")
     private Location deliveryLocation;
 
     @ManyToOne

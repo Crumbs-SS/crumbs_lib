@@ -22,5 +22,6 @@ public class Search {
     private String query;
 
     @ManyToOne
-    private UserDetails userDetailsId;
+    @JoinColumn(name="user_details_id")
+    private UserDetails userDetails;
 }

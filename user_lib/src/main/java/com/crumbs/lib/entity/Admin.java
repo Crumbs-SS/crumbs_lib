@@ -17,6 +17,7 @@ public class Admin {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "user_status_id")
     private UserStatus userStatus;
 
     @OneToOne

@@ -31,6 +31,7 @@ public class Restaurant {
 
     @ManyToOne
     @JsonIgnoreProperties("restaurants")
+    @JoinColumn(name="owner_id")
     private Owner restaurantOwner;
 
     @OneToMany(mappedBy="restaurant", cascade = CascadeType.ALL)
@@ -44,6 +45,7 @@ public class Restaurant {
     private List<RestaurantCategory> categories = new ArrayList<>();
 
     @ManyToOne
+    @JoinColumn(name="restaurant_status_id")
     private RestaurantStatus restaurantStatus;
 }
 

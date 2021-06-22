@@ -21,13 +21,15 @@ public class DriverRating {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name="customer_id")
     private Customer customer;
 
     @ManyToOne
+    @JoinColumn(name="driver_id")
     private Driver driver;
 
     @JsonIgnoreProperties("driverRating")
-    @OneToOne(mappedBy = "driverRating")
+    @OneToOne
     private Order order;
 
     private Float rating;

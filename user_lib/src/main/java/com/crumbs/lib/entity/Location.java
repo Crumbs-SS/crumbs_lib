@@ -26,10 +26,6 @@ public class Location {
     @Column(unique = true)
     private String street;
 
-    @OneToMany(mappedBy="location", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Customer> customers;
-
     @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Restaurant> restaurants;
