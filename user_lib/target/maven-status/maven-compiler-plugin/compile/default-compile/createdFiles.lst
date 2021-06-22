@@ -1,3 +1,4 @@
+com/crumbs/lib/repository/DriverStateRepository.class
 com/crumbs/lib/entity/RestaurantStatus$RestaurantStatusBuilder.class
 com/crumbs/lib/entity/DriverState$DriverStateBuilder.class
 com/crumbs/lib/repository/DriverRatingRepository.class
@@ -15,8 +16,11 @@ com/crumbs/lib/repository/CustomerLocationRepository.class
 com/crumbs/lib/entity/CustomerLocationID$CustomerLocationIDBuilder.class
 com/crumbs/lib/entity/DriverState.class
 com/crumbs/lib/entity/CustomerLocation$CustomerLocationBuilder.class
+com/crumbs/lib/repository/OrderStatusRepository.class
 com/crumbs/lib/entity/Payment.class
+com/crumbs/lib/repository/UserStatusRepository.class
 com/crumbs/lib/entity/RestaurantRating$RestaurantRatingBuilder.class
+com/crumbs/lib/repository/RestaurantStatusRepository.class
 com/crumbs/lib/entity/RestaurantRating.class
 com/crumbs/lib/repository/RestaurantRatingRepository.class
 com/crumbs/lib/entity/DriverRating.class
