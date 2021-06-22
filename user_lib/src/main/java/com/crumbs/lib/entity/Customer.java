@@ -20,7 +20,7 @@ public class Customer {
     private Long id;
 
     @Column(nullable = false)
-    private Long loyaltyPoints;
+    private int loyaltyPoints;
 
     @Column(nullable = false)
     private String stripeId;

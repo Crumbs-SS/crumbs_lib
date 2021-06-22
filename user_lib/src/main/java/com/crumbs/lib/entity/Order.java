@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class Order {
 
     private String phone;
     private String preferences;
-    private Date deliveryTime;
-    private Date createdAt;
+    private Timestamp deliveryTime;
+    private Timestamp createdAt;
 
     @OneToOne(mappedBy = "order")
     private DriverRating driverRating;

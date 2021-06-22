@@ -32,7 +32,7 @@ public class DriverRating {
     @OneToOne
     private Order order;
 
-    private Float rating;
+    private int rating;
     private String description;
 
 

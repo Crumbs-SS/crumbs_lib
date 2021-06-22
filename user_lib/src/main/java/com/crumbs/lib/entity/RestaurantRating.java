@@ -25,7 +25,7 @@ public class RestaurantRating {
     @JsonIgnoreProperties("restaurantRating")
     private Order order;
 
-    private Float rating;
+    private int rating;
     private String description;
 
 }

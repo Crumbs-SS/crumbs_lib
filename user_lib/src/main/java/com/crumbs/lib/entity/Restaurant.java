@@ -26,7 +26,7 @@ public class Restaurant {
     private Location location;
 
     private String name;
-    private Integer rating;
+    private double rating;
     private Integer priceRating;
 
     @ManyToOne
