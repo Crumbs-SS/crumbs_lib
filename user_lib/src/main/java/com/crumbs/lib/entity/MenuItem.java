@@ -1,5 +1,6 @@
 package com.crumbs.lib.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,6 +25,6 @@ public class MenuItem {
     private String description;
 
     @ManyToOne
-    @JsonIgnoreProperties("menuItems")
+    @JsonIgnore
     private Restaurant restaurant;
 }

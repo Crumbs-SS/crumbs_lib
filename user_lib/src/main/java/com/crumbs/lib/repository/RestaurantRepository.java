@@ -12,8 +12,9 @@ import java.util.List;
 @Repository
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
-    @Query("select r from restaurant r where restaurant_owner_id = ?1")
+    @Query("select r from restaurant r where owner_id = ?1")
     List<Restaurant> findRestaurantByOwnerID(Long id);
+
     String query = "SELECT DISTINCT r FROM restaurant r JOIN r.menuItems m WHERE m.restaurant.id = r.id " +
             "AND LOWER(m.name) LIKE LOWER(CONCAT('%', ?1, '%'))";
 
