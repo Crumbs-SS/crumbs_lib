@@ -22,10 +22,11 @@ public class Payment {
     @Column(name="stripe_id")
     private String stripeID;
 
-    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    @Column(nullable = false, columnDefinition = "BIT", length = 1)
     private boolean isValid;
 
     @OneToMany(mappedBy = "payment")
     @JsonIgnore
     private List<Order> orders;
 }
+
