@@ -1,5 +1,6 @@
 package com.crumbs.lib.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
@@ -24,19 +25,19 @@ public class UserDetails {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
-    @JsonManagedReference
+    @JsonBackReference
     private Customer customer;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
-    @JsonManagedReference
+    @JsonBackReference
     private Driver driver;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
-    @JsonManagedReference
+    @JsonBackReference
     private Owner owner;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
-    @JsonManagedReference
+    @JsonBackReference
     private Admin admin;
 
     @Column(nullable = false)

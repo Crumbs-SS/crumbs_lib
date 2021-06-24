@@ -2,6 +2,7 @@ package com.crumbs.lib.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -39,7 +40,7 @@ public class Customer {
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")
-    @JsonBackReference
+    @JsonManagedReference
     @ToString.Exclude
     private UserDetails userDetails;
 }
