@@ -23,7 +23,7 @@ public class Restaurant {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "location_id", referencedColumnName = "id")
+    @JoinColumn(name = "location_id")
     private Location location;
 
     private String name;
