@@ -25,19 +25,19 @@ public class UserDetails {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
-    @JsonBackReference
+    @JsonBackReference(value = "customer")
     private Customer customer;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
-    @JsonBackReference
+    @JsonBackReference(value = "driver")
     private Driver driver;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
-    @JsonBackReference
+    @JsonBackReference(value = "owner")
     private Owner owner;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userDetails")
-    @JsonBackReference
+    @JsonBackReference(value = "admin")
     private Admin admin;
 
     @Column(nullable = false)

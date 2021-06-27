@@ -27,7 +27,7 @@ public class Owner {
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")
-    @JsonManagedReference
+    @JsonManagedReference(value = "owner")
     @ToString.Exclude
     private UserDetails userDetails;
 

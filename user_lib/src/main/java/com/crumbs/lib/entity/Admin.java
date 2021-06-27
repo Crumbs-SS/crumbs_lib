@@ -26,7 +26,7 @@ public class Admin {
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")
-    @JsonManagedReference
+    @JsonManagedReference(value = "admin")
     @ToString.Exclude
     private UserDetails userDetails;
 }

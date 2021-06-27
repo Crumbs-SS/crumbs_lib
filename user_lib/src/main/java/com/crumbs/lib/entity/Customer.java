@@ -40,7 +40,7 @@ public class Customer {
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")
-    @JsonManagedReference
+    @JsonManagedReference(value = "customer")
     @ToString.Exclude
     private UserDetails userDetails;
 }
