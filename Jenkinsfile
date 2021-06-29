@@ -16,10 +16,10 @@ pipeline{
       }
 
   }
-  post {
-          always {
-              sh 'mvn clean'
-          }
-      }
+//   post {
+//           always {
+//               sh 'mvn clean'
+//           }
+//       }
 
 }
