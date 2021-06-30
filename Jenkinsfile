@@ -4,6 +4,7 @@ pipeline{
 
       tools {
             maven 'maven'
+            java 'java'
       }
 
   stages{
@@ -16,10 +17,10 @@ pipeline{
       }
 
   }
-  post {
-          always {
-              sh 'mvn clean'
-          }
-      }
+//   post {
+//           always {
+//               sh 'mvn clean'
+//           }
+//       }
 
 }
