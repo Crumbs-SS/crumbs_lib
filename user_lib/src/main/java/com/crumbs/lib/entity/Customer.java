@@ -31,6 +31,8 @@ public class Customer {
     @ManyToOne
     @JoinColumn(name="user_status_id")
     @JsonIgnoreProperties("customers")
+    @JsonBackReference
+    @ToString.Exclude
     private UserStatus userStatus;
 
     @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
@@ -42,5 +44,8 @@ public class Customer {
     @JsonBackReference
     @ToString.Exclude
     private UserDetails userDetails;
+
+    @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
+    private List<CartItem> cartItems;
 }
 

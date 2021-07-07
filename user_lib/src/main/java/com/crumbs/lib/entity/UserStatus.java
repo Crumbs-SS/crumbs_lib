@@ -1,6 +1,7 @@
 package com.crumbs.lib.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,6 +29,7 @@ public class UserStatus {
 
     @OneToMany(mappedBy = "userStatus")
     @JsonIgnore
+    @JsonManagedReference
     private List<Customer> customers;
 
     @OneToMany(mappedBy = "userStatus")

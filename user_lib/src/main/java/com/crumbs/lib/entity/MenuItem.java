@@ -25,6 +25,6 @@ public class MenuItem {
     private String description;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonIgnoreProperties("menuItems")
     private Restaurant restaurant;
 }

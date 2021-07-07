@@ -1,6 +1,7 @@
 package com.crumbs.lib.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,6 +36,7 @@ public class Restaurant {
     private Owner restaurantOwner;
 
     @OneToMany(mappedBy="restaurant", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Order> orders;
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)

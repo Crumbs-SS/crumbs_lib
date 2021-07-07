@@ -23,6 +23,6 @@ public class OrderStatus {
     private String status;
 
     @OneToMany(mappedBy="orderStatus", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("orderStatus")
+    @JsonIgnore
     private List<Order> orders;
 }
