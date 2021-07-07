@@ -26,9 +26,9 @@ public class Location {
     @Column(unique = true)
     private String street;
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Restaurant> restaurants;
+    @OneToOne(mappedBy = "location", cascade = CascadeType.ALL)
+    private Restaurant restaurant;
 
     @OneToMany(mappedBy="deliveryLocation", cascade = CascadeType.ALL)
     @JsonIgnore

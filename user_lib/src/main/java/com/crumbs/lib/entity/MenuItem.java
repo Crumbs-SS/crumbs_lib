@@ -26,5 +26,6 @@ public class MenuItem {
 
     @ManyToOne
     @JsonIgnoreProperties("menuItems")
+    @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 }

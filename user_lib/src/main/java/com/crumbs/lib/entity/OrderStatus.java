@@ -1,6 +1,6 @@
+
 package com.crumbs.lib.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,6 +23,6 @@ public class OrderStatus {
     private String status;
 
     @OneToMany(mappedBy="orderStatus", cascade = CascadeType.ALL)
-    @JsonIgnore
+    @JsonIgnoreProperties("orderStatus")
     private List<Order> orders;
 }

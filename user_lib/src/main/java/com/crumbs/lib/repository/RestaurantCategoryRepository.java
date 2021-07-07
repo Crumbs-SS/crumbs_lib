@@ -19,6 +19,6 @@ RestaurantCategoryRepository extends JpaRepository<RestaurantCategory, Restauran
     void deleteByRestaurantID(Long id);
 
     @Modifying
-    @Query(value = "INSERT INTO restaurant_category VALUES (:categoryName, :restaurantID)", nativeQuery = true)
-    void insertRestaurantCategory(@Param("categoryName") String categoryName, @Param("restaurantID") Long restaurantID);
+    @Query(value = "INSERT INTO restaurant_category VALUES (:restaurant_id, :category_id)", nativeQuery = true)
+    void insertRestaurantCategory(@Param("restaurant_id") Long restaurantID, @Param("category_id") String categoryName);
 }

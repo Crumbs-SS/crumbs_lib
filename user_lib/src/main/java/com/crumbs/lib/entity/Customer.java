@@ -1,12 +1,11 @@
+
 package com.crumbs.lib.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -31,8 +30,6 @@ public class Customer {
     @ManyToOne
     @JoinColumn(name="user_status_id")
     @JsonIgnoreProperties("customers")
-    @JsonBackReference
-    @ToString.Exclude
     private UserStatus userStatus;
 
     @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
@@ -41,11 +38,7 @@ public class Customer {
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")
-    @JsonBackReference
+    @JsonManagedReference(value = "customer")
     @ToString.Exclude
     private UserDetails userDetails;
-
-    @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
-    private List<CartItem> cartItems;
 }
-
