@@ -27,11 +27,12 @@ public class Owner {
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")
-    @JsonManagedReference(value = "owner")
     @ToString.Exclude
+    @JsonIgnoreProperties("owner")
     private UserDetails userDetails;
 
     @OneToMany(mappedBy="restaurantOwner", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("restaurantOwner")
     private List<Restaurant> restaurants;
 }
 

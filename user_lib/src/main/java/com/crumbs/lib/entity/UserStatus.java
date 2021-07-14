@@ -29,7 +29,6 @@ public class UserStatus {
 
     @OneToMany(mappedBy = "userStatus")
     @JsonIgnore
-    @JsonManagedReference
     private List<Customer> customers;
 
     @OneToMany(mappedBy = "userStatus")

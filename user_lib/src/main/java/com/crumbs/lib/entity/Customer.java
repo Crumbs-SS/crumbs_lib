@@ -38,11 +38,11 @@ public class Customer {
 
     @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
     private List<CartItem> cartItems;
-    
+
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")
-    @JsonManagedReference(value = "customer")
+    @JsonIgnoreProperties("customer")
     @ToString.Exclude
     private UserDetails userDetails;
 }
