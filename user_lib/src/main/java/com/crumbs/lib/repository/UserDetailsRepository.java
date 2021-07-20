@@ -10,6 +10,7 @@ import java.util.Optional;
 public interface UserDetailsRepository extends JpaRepository<UserDetails, Long> {
     Optional<UserDetails> findByUsernameOrEmail(String username, String email);
     Optional<UserDetails> findByUsername(String username);
-//    @Query("select email from user_details where email = ?1")
-//    String findUserByEmail(String ownerEmail);
+    Optional<UserDetails> findByEmail(String email);
+
+    Page<UserDetails> findByRole(Pageable pageable, String role);
 }
