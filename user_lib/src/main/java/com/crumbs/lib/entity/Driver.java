@@ -25,6 +25,7 @@ public class Driver {
 
         @JoinColumn(name="state_id")
         @ManyToOne
+        @JsonIgnoreProperties("drivers")
         private DriverState state;
 
         @ManyToOne
