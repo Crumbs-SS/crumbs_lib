@@ -27,6 +27,8 @@ public class Order {
     private String preferences;
     private Timestamp deliveryTime;
     private Timestamp createdAt;
+    private Timestamp pickedUpAt;
+    private Timestamp deliveredAt;
 
     @OneToOne(mappedBy = "order")
     private DriverRating driverRating;
