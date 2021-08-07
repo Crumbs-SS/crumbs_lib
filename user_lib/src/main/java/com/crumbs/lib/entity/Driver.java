@@ -43,5 +43,7 @@ public class Driver {
         @ToString.Exclude
         private UserDetails userDetails;
 
+        private Long totalPay;
+
 }
 
