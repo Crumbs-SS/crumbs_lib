@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -25,10 +26,13 @@ public class Order {
 
     private String phone;
     private String preferences;
-    private Timestamp deliveryTime;
+    private Timestamp deliverySlot;
     private Timestamp createdAt;
     private Timestamp pickedUpAt;
     private Timestamp deliveredAt;
+    private String deliveryDistance;
+    private String deliveryTime;
+    private BigDecimal deliveryPay;
 
     @OneToOne(mappedBy = "order")
     private DriverRating driverRating;
