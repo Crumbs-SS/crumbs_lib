@@ -8,4 +8,8 @@
 /.idea
 /user_lib/target
 
+user_lib/target
+target
+/target
 *.class
+  
