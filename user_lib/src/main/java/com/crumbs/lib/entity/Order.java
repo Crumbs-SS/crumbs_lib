@@ -32,7 +32,7 @@ public class Order {
     private Timestamp deliveredAt;
     private String deliveryDistance;
     private String deliveryTime;
-    private BigDecimal deliveryPay;
+    private Float deliveryPay;
 
     @OneToOne(mappedBy = "order")
     private DriverRating driverRating;
