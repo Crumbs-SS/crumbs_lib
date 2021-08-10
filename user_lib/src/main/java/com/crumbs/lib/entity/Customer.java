@@ -32,6 +32,7 @@ public class Customer {
     @JsonIgnoreProperties("customers")
     private UserStatus userStatus;
 
+    @JsonIgnoreProperties("customer")
     @OneToMany(mappedBy="customer", cascade = CascadeType.ALL)
     private List<Order> orders;
 

@@ -62,7 +62,7 @@ public class Order {
     private Location deliveryLocation;
 
     @ManyToOne
-    @JsonIgnoreProperties({"menuItems", "orders"})
+    @JsonIgnoreProperties({"menuItems", "orders", "restaurantOwner"})
     private Restaurant restaurant;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
