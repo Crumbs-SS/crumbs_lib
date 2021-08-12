@@ -1,6 +1,7 @@
 package com.crumbs.lib.repository;
 
 import com.crumbs.lib.entity.Customer;
+import com.crumbs.lib.entity.Driver;
 import com.crumbs.lib.entity.Order;
 import com.crumbs.lib.entity.OrderStatus;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,10 @@ public interface OrderRepository extends JpaRepository<Order, Long>, JpaSpecific
     Page<Order> findOrderByOrderStatusAndCustomer(OrderStatus orderStatus, Customer customer, Pageable pageable);
     Page<Order> findOrderByOrderStatus(OrderStatus orderStatus, Pageable pageable);
     List<Order> findOrderByOrderStatus(OrderStatus orderStatus);
+
+    @Query("select o from restaurant_order o where driver_id = ?1 and status_id = 'DELIVERING'")
+    Order findDriverAcceptedOrder(Long driver_id);
+
 }
 
 
