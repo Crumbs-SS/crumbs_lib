@@ -1,6 +1,7 @@
 package com.crumbs.lib.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,15 +18,24 @@ import java.util.List;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column(name="stripe_id")
+    @Column(name="stripe_id", nullable = false)
     private String stripeID;
 
-    @Column(nullable = false, columnDefinition = "BIT", length = 1)
-    private boolean isValid;
+    @Column(name="client_secret", nullable = false)
+    private String clientSecret;
 
-    @OneToMany(mappedBy = "payment")
+    @Column(nullable = false)
+    private String amount;
+
+    @Column(nullable = false)
+    private String status;
+
+    @OneToMany(mappedBy="payment", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Order> orders;
+
+
 }

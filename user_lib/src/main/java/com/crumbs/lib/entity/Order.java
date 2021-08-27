@@ -55,6 +55,7 @@ public class Order {
     private Customer customer;
 
     @ManyToOne
+    @JoinColumn(name="payment_id", referencedColumnName = "id")
     private Payment payment;
 
     @ManyToOne
