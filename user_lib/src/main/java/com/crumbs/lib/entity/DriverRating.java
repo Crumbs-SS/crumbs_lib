@@ -1,14 +1,10 @@
 package com.crumbs.lib.entity;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
@@ -22,13 +18,15 @@ public class DriverRating {
 
     @ManyToOne
     @JoinColumn(name="customer_id")
+    @JsonIgnoreProperties("orders")
     private Customer customer;
 
     @ManyToOne
     @JoinColumn(name="driver_id")
+    @JsonIgnoreProperties("orders")
     private Driver driver;
 
-    @JsonIgnoreProperties("driverRating")
+    @JsonIgnoreProperties({"driverRating", "customer", "driver"})
     @OneToOne
     private Order order;
 
