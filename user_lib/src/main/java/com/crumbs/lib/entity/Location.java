@@ -20,7 +20,6 @@ public class Location {
     private Long id;
 
     private String city;
-    private String zipCode;
     private String state;
 
     @Column(unique = true)

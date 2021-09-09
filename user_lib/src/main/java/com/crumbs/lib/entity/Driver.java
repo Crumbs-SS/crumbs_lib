@@ -39,7 +39,7 @@ public class Driver {
         @OneToOne
         @MapsId
         @JoinColumn(name = "user_details_id")
-        @JsonIgnoreProperties("driver")
+        @JsonIgnoreProperties(value = {"driver", "customer"})
         @ToString.Exclude
         private UserDetails userDetails;
 

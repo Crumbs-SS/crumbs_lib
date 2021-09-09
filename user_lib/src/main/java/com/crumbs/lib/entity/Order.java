@@ -45,12 +45,12 @@ public class Order {
     private OrderStatus orderStatus;
 
     @ManyToOne
-    @JsonIgnoreProperties("orders")
+    @JsonIgnoreProperties(value = {"orders", "userDetails"})
     @JoinColumn(name="driver_id")
     private Driver driver;
 
     @ManyToOne
-    @JsonIgnoreProperties("orders")
+    @JsonIgnoreProperties(value = "orders")
     @JoinColumn(name="customer_id")
     private Customer customer;
 
@@ -63,10 +63,10 @@ public class Order {
     private Location deliveryLocation;
 
     @ManyToOne
-    @JsonIgnoreProperties({"menuItems", "orders", "restaurantOwner"})
+    @JsonIgnoreProperties(value = {"menuItems", "orders", "restaurantOwner"})
     private Restaurant restaurant;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("order")
+    @JsonIgnoreProperties(value = "order")
     private List<FoodOrder> foodOrders = new ArrayList<>();
 }

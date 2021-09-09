@@ -43,7 +43,7 @@ public class Customer {
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_details_id")
-    @JsonIgnoreProperties("customer")
+    @JsonIgnoreProperties(value = {"customer", "driver"})
     @ToString.Exclude
     private UserDetails userDetails;
 }
