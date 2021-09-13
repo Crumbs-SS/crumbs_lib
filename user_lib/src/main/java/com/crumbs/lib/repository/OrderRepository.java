@@ -20,8 +20,8 @@ public interface OrderRepository extends JpaRepository<Order, Long>, JpaSpecific
     Page<Order> findOrderByOrderStatus(OrderStatus orderStatus, Pageable pageable);
     List<Order> findOrderByOrderStatus(OrderStatus orderStatus);
 
-    @Query("select o from restaurant_order o where o.driver.id = ?1 and o.orderStatus.status = 'DELIVERING'")
-    List<Order> findDriverAcceptedOrder(Long driver_id);
+    @Query("select o from restaurant_order o where o.driver.userDetails.username = ?1 and o.orderStatus.status = 'DELIVERING'")
+    List<Order> findDriverAcceptedOrder(String username);
 
 }
 
