@@ -23,6 +23,9 @@ public interface OrderRepository extends JpaRepository<Order, Long>, JpaSpecific
     @Query("select o from restaurant_order o where o.driver.userDetails.username = ?1 and o.orderStatus.status = 'DELIVERING'")
     List<Order> findDriverAcceptedOrder(String username);
 
+    @Query("select o from restaurant_order o where o.restaurant.id = ?1 and o.orderStatus.status != 'FULFILLED'")
+    List<Order> findRestaurantPendingOrders(Long restaurant_id);
+
 }
 
 
