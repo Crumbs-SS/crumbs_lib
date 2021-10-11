@@ -45,7 +45,7 @@ public class Order {
     private OrderStatus orderStatus;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = {"orders", "userDetails"})
+    @JsonIgnoreProperties(value = {"orders"})
     @JoinColumn(name="driver_id")
     private Driver driver;
 
