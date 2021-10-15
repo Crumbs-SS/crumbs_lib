@@ -26,7 +26,7 @@ public class DriverRating {
     @JsonIgnoreProperties("orders")
     private Driver driver;
 
-    @JsonIgnoreProperties({"driverRating", "customer", "driver"})
+    @JsonIgnoreProperties({"driverRating","restaurantRating", "customer", "driver"})
     @OneToOne
     private Order order;
 
