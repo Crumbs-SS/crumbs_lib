@@ -19,10 +19,12 @@ public class RestaurantRating {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name="restaurant_id")
+    @JsonIgnoreProperties({"orders", "menuItems"})
     private Restaurant restaurant;
 
     @OneToOne
-    @JsonIgnoreProperties("restaurantRating")
+    @JsonIgnoreProperties({"restaurantRating","driverRating", "restaurant"})
     private Order order;
 
     private int rating;
