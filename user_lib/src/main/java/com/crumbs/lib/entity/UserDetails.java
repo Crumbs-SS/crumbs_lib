@@ -52,7 +52,7 @@ public class UserDetails {
 
     @Column(nullable = false)
     @JsonIgnore
-    @Size(min = 60, max = 60)
+//    @Size(min = 60, max = 60)
     private String password;
 
     @Column(unique = true, nullable = false)
