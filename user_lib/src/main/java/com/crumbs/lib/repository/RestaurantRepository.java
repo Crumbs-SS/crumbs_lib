@@ -38,7 +38,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long>, J
             "FROM Restaurant ro\n" +
             "JOIN Location l ON ro.location_id=l.id\n" +
             "HAVING distance<?3",
-            countQuery = "SELECT (*) FROM RESTAURANT_ORDER",
+            countQuery = "SELECT (*) FROM RESTAURANT",
             nativeQuery = true)
 
     Page<Restaurant> findRestaurantsByLocation(
