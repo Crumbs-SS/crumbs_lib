@@ -6,9 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
-    @Query("select street from location where street = ?1")
-    String findLocationByStreet(String street);
+    Optional<Location> findLocationByAddress(String address);
 }
