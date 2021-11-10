@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
@@ -19,11 +20,9 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String city;
-    private String state;
-
-    @Column(unique = true)
-    private String street;
+    private BigDecimal longitude;
+    private BigDecimal latitude;
+    private String address;
 
     @JsonIgnore
     @OneToOne(mappedBy = "location", cascade = CascadeType.ALL)
